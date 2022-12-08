@@ -1,5 +1,6 @@
 # Import necessary modules
 import pymongo
+import csv
 
 # Connect to MongoDB
 client = pymongo.MongoClient("mongodb://localhost:27017/")
@@ -46,7 +47,6 @@ def delete_contact(name):
 
 # Function to import contacts from a CSV file
 def import_contacts(file_path):
-  import csv
   with open(file_path) as csv_file:
     csv_reader = csv.DictReader(csv_file)
     for row in csv_reader:
